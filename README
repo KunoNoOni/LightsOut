@@ -1,1 +1,9 @@
 To properly compile this you will need Flixel 2.5+ and Flixel Power Tools 1.8
+
+1-5-2013
+Polished up the game a little more. 
+
+Added puzzle set to GUI
+Added puzzle # to GUI
+Added ability to reset the levels
+Added icon to show which puzzle sets are complete
