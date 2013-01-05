@@ -21,6 +21,7 @@ package
 	
 		
 		[Embed(source = 'Sprites/buildTile.png')] static public var _buildTile:Class;
+		[Embed(source = 'Sprites/check.png')] static public var _check:Class;
 		
 	
 		[Embed(source = 'Maps/mapCSV_Group1_set1P1.csv', mimeType = 'application/octet-stream')] static public var set1P1:Class;

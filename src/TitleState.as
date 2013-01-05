@@ -23,14 +23,25 @@ package
 			add(logo);
 			
 			var instruct:FlxText = new FlxText(FlxG.width*0.5-100,FlxG.height-30, 200, "PRESS [x] TO START");
-			instruct.setFormat(null,15,0xFFFFFF, "center");
+			instruct.setFormat(null,12,0xFFFFFF, "center");
 			add(instruct);
+			
+			var instruct2:FlxText = new FlxText(FlxG.width*0.5-100,FlxG.height-15, 200, "PRESS [r] TO RESET LEVELS");
+			instruct2.setFormat(null,10,0xFFFFFF, "center");
+			add(instruct2);
 		}
 		
 		override public function update():void
 		{
 			if(FlxG.keys.X)
-				FlxG.switchState(new SetButtonState());	//<--- using new state change code for flixel 2.5		
+				FlxG.switchState(new SetButtonState());	//<--- using new state change code for flixel 2.5	
+			if(FlxG.keys.R)
+			{
+				LevelsCompleted.set1Levels = 1;
+				LevelsCompleted.set2Levels = 1;
+				LevelsCompleted.set3Levels = 1;
+				FlxG.switchState(new SetButtonState());	//<--- using new state change code for flixel 2.5
+			}
 			super.update();
 		}
 	}

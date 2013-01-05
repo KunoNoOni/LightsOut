@@ -15,6 +15,7 @@ package
 		private var set3:FlxButtonPlus;
 		private var bWidth:Number = 50;
 		private var bHeight:Number = 20;
+		private var Check:Checkmark;
 		
 		public function SetButtonState()
 		{
@@ -24,6 +25,7 @@ package
 		override public function create():void
 		{
 			FlxG.mouse.show();
+			checkForCompletedSet();
 			set1 = new FlxButtonPlus(FlxG.width*0.5-40,FlxG.height*0.5-80,puzzleSet,[1],"Puzzle Set 1",75,20);
 			set2 = new FlxButtonPlus(FlxG.width*0.5-40,FlxG.height*0.5-10,puzzleSet,[2],"Puzzle Set 2",75,20);
 			set3 = new FlxButtonPlus(FlxG.width*0.5-40,FlxG.height*0.5+60,puzzleSet,[3],"Puzzle Set 3",75,20);
@@ -64,6 +66,25 @@ package
 				}
 			}
 			FlxG.switchState(new MenuState());	//<--- using new state change code for flixel 2.5
+		}
+		
+		private function checkForCompletedSet():void
+		{
+			if(LevelsCompleted.set1Levels == 25)
+			{
+				Check = new Checkmark(FlxG.width*0.5-70,FlxG.height*0.5-81);
+				add(Check);
+			}
+			if(LevelsCompleted.set2Levels == 25)
+			{
+				Check = new Checkmark(FlxG.width*0.5-70,FlxG.height*0.5-11);
+				add(Check);
+			}
+			if(LevelsCompleted.set3Levels == 25)
+			{
+				Check = new Checkmark(FlxG.width*0.5-70,FlxG.height*0.5+59);
+				add(Check);
+			}
 		}
 	}
 }

@@ -19,6 +19,8 @@ package
 		private var moves:FlxText;
 		private var yourmoves:FlxText;
 		private var minmoves:FlxText;
+		private var pSet:FlxText;
+		private var pLevel:FlxText;
 		private var backButton:FlxButtonPlus;
 				
 		override public function create():void
@@ -51,6 +53,12 @@ package
 			yourmoves = new FlxText(100,0, 110, "Your Moves: "+Registry.moves);
 			yourmoves.setFormat(null,11,0x000000, "center");
 			add(yourmoves);
+			pSet = new FlxText(0,15,100, "Puzzle Set: "+Registry.puzzleSet);
+			pSet.setFormat(null,11,0x000000, "center");
+			add(pSet);
+			pLevel = new FlxText(100,15,100, "Puzzle: "+Registry.currLevel);
+			pLevel.setFormat(null,11,0x000000, "center");
+			add(pLevel);
 			//create back button
 			backButton = new FlxButtonPlus(FlxG.width*0.5-25,200,levelButtons,[],"Back",50,20);
 			backButton.updateActiveButtonColors([0xff00ff00,0xff00ff00]);
